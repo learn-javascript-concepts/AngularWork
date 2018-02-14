@@ -4,7 +4,9 @@ var express = require("express");
 var app = express();
 var server = http.createServer(app);
 
-app.set("view engine", "vash");
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 app.use(express.static(__dirname + "/public"));
 
 var controllers = require("./controllers");

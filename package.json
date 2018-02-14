@@ -8,10 +8,10 @@
         "email": "MayankGupta688@gmail.com"
     },
     "dependencies": {
+        "ejs": "^2.5.7",
         "express": "^4.16.2",
         "grunt": "^1.0.1",
-        "grunt-cli": "^1.2.0",
-        "vash": "^0.12.4"
+        "grunt-cli": "^1.2.0"
     },
     "devDependencies": {
         "bower": "^1.8.2",

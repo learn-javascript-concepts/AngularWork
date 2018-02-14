@@ -6,7 +6,6 @@
         $scope.userName = "";
         $scope.userPassword = "";
         $scope.loginClicked = function() {
-            alert("hi " + $scope.userName);
             $location.path("/demo");            
         }
     }
@@ -14,21 +13,9 @@
     appModule.controller("loginController", loginController);
 
     var demoController = function($scope){
-        $scope.attribute = "Khadoose and bhullakad";
+        $scope.attribute = "...";
     }
 
     appModule.controller("demoController", demoController);
-
-    appModule.config(function($routeProvider, $locationProvider){
-        $locationProvider.html5Mode(true);
-        $routeProvider.when("/", {
-            templateUrl: "./partials/login.vash",
-            controller: "loginController"
-        }).when("/demo", {
-            templateUrl: "./partials/demo.vash",
-            controller: "demoController"
-        });
-        
-    });
 
 })(window.angular);
