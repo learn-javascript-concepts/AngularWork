@@ -2,6 +2,9 @@
 
     viewController.init = function(app) {
 
+        var express = require("express");
+        var router = express.Router();
+
         app.get("/", function(req, res){
             res.sendfile('./views/layout.html');
         });
@@ -14,6 +17,8 @@
             var name = req.params.name;
             res.sendfile('./views/partials/' + name);
         });
+
+        return app;
         
     }
 
