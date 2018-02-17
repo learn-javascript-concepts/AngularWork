@@ -1,21 +1,16 @@
-(function(angular) {
+define(["appModuleRouting", "loginController"], function(appModuleRouting, loginController) {
 
-    var appModule = angular.module("appModule", ["ngRoute"]);
+    var appModule = {
+        init : function() {
+            var appModule = angular.module("appModule", ["ngRoute"]);
 
-    var loginController = function($scope, $location){
-        $scope.userName = "";
-        $scope.userPassword = "";
-        $scope.loginClicked = function() {
-            $location.path("/demo");            
+            appModule.controller("loginController", loginController);
+
+            appModuleRouting.initializeAngularRouting();
+            
+            angular.bootstrap(document, ["appModule"]);
         }
     }
 
-    appModule.controller("loginController", loginController);
-
-    var demoController = function($scope){
-        $scope.attribute = "...";
-    }
-
-    appModule.controller("demoController", demoController);
-
-})(window.angular);
+    return appModule;
+});

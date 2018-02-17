@@ -1,18 +1,23 @@
-(function(angular) {
-    
-    var appModule = angular.module("appModule");
+define([], function() {
 
-    appModule.config(function($routeProvider, $locationProvider){
-        $routeProvider.when("/", {
-            templateUrl: "./partials/login.html",
-            controller: "loginController"
-        }).when("/demo", {
-            templateUrl: "./partials/demo.html",
-            controller: "demoController"
-        });
-        
-        $locationProvider.html5Mode(true);
-    });
+    var routeInitializer = {
 
+        initializeAngularRouting: function() {
 
-})(window.angular)
+            var appModule = angular.module("appModule");
+
+            appModule.config(function($routeProvider, $locationProvider){
+
+                $locationProvider.html5Mode(true);
+
+                $routeProvider.when("/", {
+                    templateUrl: "./partials/login.html",
+                    controller: "loginController"
+                });
+            });
+
+        }
+    }
+
+    return routeInitializer;
+});
