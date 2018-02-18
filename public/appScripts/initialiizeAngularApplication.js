@@ -11,7 +11,8 @@ require.config({
         "workOrderController": "appScripts/controllers/workOrderController",
         "createWorkOrderController": "appScripts/controllers/createWorkOrderController",
         "appConstants": "appScripts/appConstants",
-        "workOrderCache": "appScripts/services/workOrderCache"
+        "workOrderCache": "appScripts/services/workOrderCache",
+        "descriptionController": "appScripts/controllers/descriptionController"
     },
     shim: {
         "angular-cookies": {

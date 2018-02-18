@@ -7,7 +7,7 @@ define([], function(){
         $scope.userName = "";
         $scope.userPassword = "";
 
-        $scope.logoutUser = function() {
+         b$scope.logoutUser = function() {
             authenticateUser.clearAuthenticationToken();
         }
 

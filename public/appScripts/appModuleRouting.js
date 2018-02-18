@@ -19,6 +19,9 @@ define([], function() {
                 }).when("/createworkorder", {
                     templateUrl: "./partials/createWorkOrder.html",
                     controller: "createWorkOrderController"
+                }).when("/description", {
+                    templateUrl: "./partials/description.html",
+                    controller: "descriptionController"
                 });
             });
 

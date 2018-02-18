@@ -10,9 +10,9 @@ define([], function() {
             
             $http.get(appConstants.getWorkOrder + $scope.workOrderNumber).then(function(response) {
                 var workOrderData = response.data;
-                if(response.data) {
-                    $location.path("workorderDetails");
-                    workOrderCache.saveWorkOrderDetails(response.data);
+                if(workOrderData) {
+                    workOrderCache.saveWorkOrderDetails(workOrderData);
+                    $location.path("description");                    
                 } else {
                     alert("No Data exists for selected Work Order Number")
                 }

@@ -4,14 +4,16 @@ define(["appModuleRouting",
         "workOrderController", 
         "createWorkOrderController", 
         "appConstants",
-        "workOrderCache"], function(
+        "workOrderCache",
+        "descriptionController"], function(
             appModuleRouting, 
             loginController, 
             authenticateUser, 
             workOrderController, 
             createWorkOrderController, 
             appConstants,
-            workOrderCache) {
+            workOrderCache,
+            descriptionController) {
 
     var appModule = {
         init : function() {
@@ -22,6 +24,8 @@ define(["appModuleRouting",
             appModule.controller("workOrderController", workOrderController);
 
             appModule.controller("createWorkOrderController", createWorkOrderController);
+            
+            appModule.controller("descriptionController", descriptionController);
 
             appModule.service("authenticateUser", authenticateUser);
 
