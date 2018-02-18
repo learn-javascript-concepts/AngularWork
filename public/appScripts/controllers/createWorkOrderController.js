@@ -1,8 +1,6 @@
 define([], function(){
 
-    var createWorkOrderController = function($scope,authenticateUser) {
-
-        
+    var createWorkOrderController = function($scope,authenticateUser, appConstants) {
 
         authenticateUser.redirectToLoginIfUnauthenticated();
 
@@ -10,8 +8,16 @@ define([], function(){
         $scope.poNumber = "";
         $scope.workOrderBy = "";
 
-        $scope.createWorkOrder = function() {
+        var requestData = {
+            "work_order_num": $scope.workOrderNumber,
+            "customer_po_num": $scope.poNumber,
+            "work_order_by": $scope.workOrderBy
+        }
 
+        $scope.createWorkOrder = function() {
+            $http.post(appConstants.createWorkOrder, requestData, function(response) {
+                var responseData = response.data;
+            })
         }
 
     }

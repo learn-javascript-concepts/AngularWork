@@ -23,15 +23,12 @@ define([], function(){
             $http.post(appConstants.authenticateUserUrl, authenticationData).then(function(response) {
                 
                 if(response.status == 200 && response.data.isAuthenticated == true) {
-                    console.dir(response.data);
-                    $location.path("workorder")
-
                     authenticateUser.setAuthenticationToken(response.data.authToken);
-
+                    $location.path("workorder");
                 } else {
                     alert("Enter Correct Credentials");
                 }
-            })          
+            });          
         }
     }
     

@@ -3,13 +3,15 @@ define(["appModuleRouting",
         "authenticateUser", 
         "workOrderController", 
         "createWorkOrderController", 
-        "appConstants"], function(
+        "appConstants",
+        "workOrderCache"], function(
             appModuleRouting, 
             loginController, 
             authenticateUser, 
             workOrderController, 
             createWorkOrderController, 
-            appConstants) {
+            appConstants,
+            workOrderCache) {
 
     var appModule = {
         init : function() {
@@ -22,6 +24,8 @@ define(["appModuleRouting",
             appModule.controller("createWorkOrderController", createWorkOrderController);
 
             appModule.service("authenticateUser", authenticateUser);
+
+            appModule.service("workOrderCache", workOrderCache);
 
             appModule.constant("appConstants", appConstants);
 
