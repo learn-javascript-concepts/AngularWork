@@ -16,7 +16,9 @@
                 userName: req.body.userName,
                 authToken: "Data"
             }
-    
+            if(req.body.userName != "Mayank") {
+                returnData.isAuthenticated = false;
+            }
             res.send(returnData);
 
         });

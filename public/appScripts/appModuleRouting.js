@@ -13,6 +13,12 @@ define([], function() {
                 $routeProvider.when("/", {
                     templateUrl: "./partials/login.html",
                     controller: "loginController"
+                }).when("/workorder", {
+                    templateUrl: "./partials/searchOrCreateWorkOrder.html",
+                    controller: "workOrderController"
+                }).when("/createworkorder", {
+                    templateUrl: "./partials/createWorkOrder.html",
+                    controller: "createWorkOrderController"
                 });
             });
 

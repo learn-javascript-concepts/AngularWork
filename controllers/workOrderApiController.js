@@ -29,6 +29,18 @@
 
         });
 
+        router.post("/createWorkOrder", function(req, res) {
+
+            var returnData =  {
+                "work_order_num": "1001",
+                "customer_po_num": "1234567",
+                "work_order_by": "Shashank",
+                "creationStatus": true
+           }
+
+            res.send(returnData);
+        })
+
         app.use('/api', router);
 
         return app;

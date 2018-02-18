@@ -2,6 +2,15 @@
 
     workOrderData.dataService = function() {
 
+        var getWorkOrderOnSerach = {
+            "id": "95eeeaba-ce52-4d52-a98f-a62751e71963",
+            "work_order_num": 1001,
+            "customer_po_num": 1234567,
+            "work_order_by": "Shashank",
+            "status": "CREATED",
+            "created": "2018-02-11T03:07:47.691015Z"
+        }
+
         var detailedWorkOrders = [{
             "id": "5545d298-2c35-4735-94fa-b8745417ba56",
             "work_order_num": 1002,

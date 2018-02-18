@@ -5,14 +5,22 @@ require.config({
         "angular-route": "lib/angular-route/angular-route",
         "appModule": "appScripts/appModule",
         "appModuleRouting": "appScripts/appModuleRouting",
-        "loginController": "appScripts/loginController"
+        "loginController": "appScripts/controllers/loginController",
+        "angular-cookies": "lib/angular-cookies/angular-cookies",
+        "authenticateUser": "appScripts/services/authenticateUser",
+        "workOrderController": "appScripts/controllers/workOrderController",
+        "createWorkOrderController": "appScripts/controllers/createWorkOrderController",
+        "appConstants": "appScripts/appConstants"
     },
     shim: {
+        "angular-cookies": {
+            deps: ["angular"]
+        },
         "angular-route" : {
             deps: ["angular"]
         },
         "appModule": {
-            deps: ["angular", "angular-route"]
+            deps: ["angular", "angular-route", "angular-cookies"]
         }
     }
 });
